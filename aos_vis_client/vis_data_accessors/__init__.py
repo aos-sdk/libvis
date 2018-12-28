@@ -14,3 +14,4 @@
 
 from aos_vis_client.vis_data_accessors.vis_base import VISBase, RequestInfo, VISClientNoValueException
 from aos_vis_client.vis_data_accessors.vis_data_accessor import VISDataAccessor
+from aos_vis_client.vis_data_accessors.vis_subscription import VISDataSubscription
