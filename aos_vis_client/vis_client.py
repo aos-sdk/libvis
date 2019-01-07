@@ -63,7 +63,7 @@ class VISClient(Thread):
         self._ws = create_connection(
             self.__vis_server_url,
             timeout=self._SOCKET_TIMEOUT,
-            sslopt={"cert_reqs": ssl.CERT_NONE}
+            sslopt={"cert_reqs": ssl.CERT_NONE, "ssl_version": ssl.PROTOCOL_TLS}
         )
 
     def _disconnect_ws(self):
