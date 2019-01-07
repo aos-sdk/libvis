@@ -33,7 +33,7 @@ class VISClient(Thread):
     """
     Vehicle Information Service client.
     """
-    _SOCKET_TIMEOUT = 0.1
+    _SOCKET_TIMEOUT = 1
     _SLEEP_INTERVAL = 0.1
 
     def __init__(self, vis_server_url, *args, **kwargs):
@@ -63,7 +63,7 @@ class VISClient(Thread):
         self._ws = create_connection(
             self.__vis_server_url,
             timeout=self._SOCKET_TIMEOUT,
-            sslopt={"cert_reqs": ssl.CERT_NONE}
+            sslopt={"cert_reqs": ssl.CERT_NONE, "ssl_version": ssl.PROTOCOL_TLS}
         )
 
     def _disconnect_ws(self):
