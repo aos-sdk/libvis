@@ -33,7 +33,7 @@ class VISClient(Thread):
     """
     Vehicle Information Service client.
     """
-    _SOCKET_TIMEOUT = 0.1
+    _SOCKET_TIMEOUT = 1
     _SLEEP_INTERVAL = 0.1
 
     def __init__(self, vis_server_url, *args, **kwargs):
